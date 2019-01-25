@@ -3,40 +3,40 @@ var PokemonStat = require('./pokemonSpecies')
 
 var Pokemon = mongoose.model('Pokemon', {
     name: {
-        type: String, required: true
+        type: String
     },
     pokemonID: {
-        type: Number, required: true
+        type: Number
     }, 
     types: [
-        {type: String, required: true}
+        {type: String}
     ], 
     hp: {
-        type: Number, required: true
+        type: Number
     },
     attack: {
-        type: Number, required: true
+        type: Number
     },
     defense: {
-        type: Number, required: true
+        type: Number
     },
     spAttack: {
-        type: Number, required: true
+        type: Number
     },
     spDefense: {
-        type: Number, required: true
+        type: Number
     },
     speed: {
-        type: Number, required: true
+        type: Number
     }, 
     generation: {
-        type: Number, required: true
+        type: Number
     }, 
     legendary: {
-        type: Boolean, required: true
+        type: String
     }, 
     species: [
-        { type: mongoose.Schema.Types.ObjectId, ref: 'PokemonSpecies', required: true}
+        { type: mongoose.Schema.Types.ObjectId, ref: 'PokemonSpecies'}
     ]
 });
 

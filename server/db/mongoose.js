@@ -1,12 +1,6 @@
-// var moongose = require('mongoose');
-// const parseCSV = require('./../../playground/parseCSV');
+var mongoose = require('mongoose');
 
-// moongose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/PokemonDB');
 
-// moongose.connect('mongodb://localhost:27017/PokemonDB', {useNewUrlParser: true}, () => {
-//     print("start parsing");
-//     var parser = parseCSV();
-//     parser.parse();
-// });
-
-// module.exports = {moongose};
+module.exports = {mongoose};

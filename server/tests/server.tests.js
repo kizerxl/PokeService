@@ -6,7 +6,7 @@ const {app} = require('./../server');
 
 describe('GET /Pokemon/:id', () => {
     it('should return the correct pokemon',(done) => {
-        var pokemonName = "Pikachu"; 
+        var pokemonName = "Bulbasaur"; 
 
         request(app)
             .get(`/pokemon/${pokemonName}`)

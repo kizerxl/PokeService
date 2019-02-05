@@ -8,9 +8,15 @@ var Pokemon = mongoose.model('Pokemon', {
     pokemonID: {
         type: Number
     }, 
-    types: [
-        {type: String}
-    ], 
+    type1: {
+        type: String
+    }, 
+    type2: {
+        type: String
+    }, 
+    total: {
+        type: Number
+    },
     hp: {
         type: Number
     },
@@ -34,11 +40,8 @@ var Pokemon = mongoose.model('Pokemon', {
     }, 
     legendary: {
         type: String
-    }, 
-    species: [
-        { type: mongoose.Schema.Types.ObjectId, ref: 'PokemonSpecies'}
-    ]
-});
+    }
+}, 'pokemon');
 
 
 module.exports = {Pokemon}

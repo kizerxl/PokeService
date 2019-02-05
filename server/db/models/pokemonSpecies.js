@@ -1,18 +1,18 @@
 var mongoose = require('mongoose');
 
 var PokemonSpecies = mongoose.model('PokemonSpecies', {
-    species_id: {
+    speciesID: {
         type: Number
     }, 
-    version_id: {
+    versionID: {
         type: Number
     }, 
-    language_id: {
+    languageId: {
         type: Number
     }, 
-    flavor_text: {
+    flavorText: {
         type: String
     }
-});
+}, 'pokemonDesc');
 
 module.exports = {PokemonSpecies}

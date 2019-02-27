@@ -7,8 +7,9 @@ var {Pokemon} = require('./db/models/pokemon');
 var {PokemonSpecies} = require('./db/models/pokemonSpecies');
 
 const app = express();
+const port = process.env.PORT || 3000 
 
-moongose.connect('mongodb://localhost:27017/PokemonDB', {useNewUrlParser: true}, () => {
+moongose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/PokemonDB', {useNewUrlParser: true}, () => {
     console.log("database connection established");
 });
 
@@ -38,8 +39,8 @@ app.get('/pokemon/:name', (req, res) => {
     }); 
 });
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
+app.listen(port, () => {
+    console.log(`Started service on port ${port}`);
 });
 
 String.prototype.capitalize = function() {

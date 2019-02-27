@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var PokemonStat = require('./pokemonSpecies')
 
 var Pokemon = mongoose.model('Pokemon', {
     name: {

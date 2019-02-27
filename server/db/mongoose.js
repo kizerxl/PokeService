@@ -1,6 +1,8 @@
-var mongoose = require('mongoose');
+// var moongose = require('mongoose');
+// moongose.Promise = global.Promise;
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/PokemonDB');
+// moongose.connect('mongodb://localhost:27017/PokemonDB', {useNewUrlParser: true}, () => {
+//     print("connected to db!");
+// });
 
-module.exports = {mongoose};
+// module.exports = {moongose};

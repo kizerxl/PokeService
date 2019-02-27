@@ -16,14 +16,14 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongodb": "^3.1.13"
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.16"
   },
   "devDependencies": {
     "csv-parser": "^2.1.0",
     "csvtojson": "^2.0.8",
-    "expect": "^23.6.0",
+    "expect": "^24.1.0",
     "mocha": "^5.2.0",
-    "mongoose": "^5.4.6",
     "nodemon": "^1.18.9",
     "supertest": "^3.4.2"
   }

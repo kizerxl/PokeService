@@ -9,3 +9,7 @@ var FavoriteSchema = new mongoose.Schema({
       type: [String]
     }
 });
+
+var Favorite = mongoose.model('Favorite', FavoriteSchema);
+
+module.exports = {Favorite}

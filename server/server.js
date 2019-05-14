@@ -90,6 +90,7 @@ app.delete('/users/me/token', authenticate, (req, res) => {
 //Favorites 
 app.post('/users/favorites/:name', authenticate, (req, res) => {
     var name = req.params.name 
+
     Favorite.findOne({'user': req.user._id}).then((favorite)=> {
         var fav = favorite
         if(!fav) { 
@@ -98,8 +99,11 @@ app.post('/users/favorites/:name', authenticate, (req, res) => {
                 pokemon: []
             })
         }
-        
-        fav.pokemon.push(name)
+
+        if(!fav.pokemon.includes(name)) {
+            fav.pokemon.push(name)
+        }
+
         fav.save().then(() => {
             res.status(200).send();
         }).catch(err => {

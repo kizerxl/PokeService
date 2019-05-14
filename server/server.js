@@ -102,6 +102,8 @@ app.post('/users/favorites/:name', authenticate, (req, res) => {
         fav.pokemon.push(name)
         fav.save().then(() => {
             res.status(200).send();
+        }).catch(err => {
+            res.status(400).send(err);
         });
     })
 });

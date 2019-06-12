@@ -122,7 +122,7 @@ app.delete('/users/favorites/:name', authenticate, (req, res) => {
         }
 
         if(fav.pokemon.includes(name)) {
-            fav.pokemon.remove({"name": name})
+            fav.pokemon.remove(name)
         }
 
         fav.save().then(() => {

@@ -112,6 +112,27 @@ app.post('/users/favorites/:name', authenticate, (req, res) => {
     })
 });
 
+app.delete('/users/favorites/:name', authenticate, (req, res) => {
+    var name = req.params.name 
+
+    Favorite.findOne({'user': req.user._id}).then((favorite)=> {
+        var fav = favorite
+        if(!fav) { 
+            res.status(400).send();
+        }
+
+        if(fav.pokemon.includes(name)) {
+            fav.pokemon.remove({"name": name})
+        }
+
+        fav.save().then(() => {
+            res.status(200).send();
+        }).catch(err => {
+            res.status(400).send(err);
+        });
+    })
+});
+
 app.get('/users/favorites', authenticate, (req, res) => {
     Favorite.findOne({'user': req.user._id}).then(favorite => {
         if (!favorite) {
